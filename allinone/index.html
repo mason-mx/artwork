@@ -1,64 +1,57 @@
 ---
-layout: page
+layout: default
 ---
-<div class="home">
-  <div class="row pack">
+  <div class="row">
     {% for post in paginator.posts %}
-      <div class="col-md-4 card">
-        <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor">
-          <div class="panel panel-default">
-            {% if post.img %}
+      <div class="col-md-6 p-2 card border border-info mb-2">
+        <div class="row">
+          {% if post.img %}
+            <div class="col-3">
               {% if post.img contains 'http://' or post.img contains 'https://' %}
                 <img width="100%" src="{{post.img}}" alt="{{post.title}}">
               {% else %}
-                <img width="100%" src="{{site.baseurl}}/images/{{post.img}}" alt="{{post.title}}">
+                <img width="100%" src="{{site.baseurl}}/assets/images/{{post.img}}" alt="{{post.title}}">
               {% endif %}
-            {% else %}
-              <img width="100%" src="{{site.baseurl}}/images/{{site.baseimg}}" alt="{{site.title}}">
-            {% endif %}
-
-            <div class="panel-body">
-              <h3 class="panel-title pull-left">{{ post.title | truncate: 25 }}</h3><span class="post-meta pull-right"><small>{{ post.date | date: "%b %-d, %Y" }}</small></span>
             </div>
-
-            <div class="panel-body"><small>
-              {{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</small>
+            <div class="col-9">
+          {% else %}
+          <div class="col-12">
+          {% endif %}
+            <div class="card-body p-0">
+              <h5 class="card-title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | truncate: 25 }}</a></h5>
+              <h6 class="card-text">{{ post.date | date: "%b %-d, %Y" }}</h5>
+              <p class="card-text">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
             </div>
           </div>
-        </a>
+        </div>
       </div>
       {% endfor %}
   </div>
 
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-      {% if paginator.total_pages > 1 %}
-        <ul class="pagination">
-          {% if paginator.previous_page %}
-            <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
-          {% else %}
-            <li><span>&laquo; Prev</span></li>
-          {% endif %}
+  <nav aria-label="Page navigation example">
+    {% if paginator.total_pages > 1 %}
+      <ul class="pagination justify-content-center">
+        {% if paginator.previous_page %}
+          <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
+        {% else %}
+          <li class="page-item"><span class="page-link">&laquo;</span></li>
+        {% endif %}
 
-          {% for page in (1..paginator.total_pages) %}
-            {% if page == paginator.page %}
-              <li class="active"><span><em>{{ page }}</em></span></li>
-            {% elsif page == 1 %}
-              <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
-            {% else %}
-              <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
-            {% endif %}
-          {% endfor %}
-
-          {% if paginator.next_page %}
-            <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
+        {% for page in (1..paginator.total_pages) %}
+          {% if page == paginator.page %}
+            <li class="page-item active"><span class="page-link">{{ page }}</span></li>
+          {% elsif page == 1 %}
+            <li class="page-item"><a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: ':num', '' | replace: '//', '/' }}">{{ page }}</a></li>
           {% else %}
-            <li><span >Next &raquo;</span></li>
+            <li class="page-item"><a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
           {% endif %}
-        </ul>
-      {% endif %}
-    </div>
-    <div class="col-md-2"></div>
-  </div>
-</div>
+        {% endfor %}
+
+        {% if paginator.next_page %}
+          <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
+        {% else %}
+          <li class="page-item"><span class="page-link">&raquo;</span></li>
+        {% endif %}
+      </ul>
+    {% endif %}
+  </nav>

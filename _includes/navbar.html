@@ -1,0 +1,17 @@
+<div class="position-fixed p-top-70 float-nav d-none d-xl-block">
+  <div class="position-absolute container">
+    {% for category in site.categories %}
+      {% capture category_name %}{{ category | first }}{% endcapture %}
+      <div class="row card">
+        <a href="{{ site.baseurl }}/{{ category_name | slugify }}/" class="index-anchor">
+          <div class="d-flex justify-content-between">
+            <img height="50px" width="auto" src="{{site.baseurl}}/images/{{category_name}}.png" alt="{{category_name}}">
+            <div class="panel-body my-auto">
+              <h6 class="panel-title text-uppercase text-primary">{{ category_name | truncate: 25 }}</h2>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>

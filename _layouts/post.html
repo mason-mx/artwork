@@ -2,26 +2,29 @@
 layout: default
 ---
 <div class="row">
-<div class="col-md-8">
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="col-md-9">
+  <article class="post" itemscope itemtype="{{ page.url | prepend: site.baseurl }}">
 
-          <header class="post-header">
-            <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-            <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-
-          </header>
-
-          <div class="post-content" itemprop="articleBody">
-            {{ content }}
-      	    <h5 class="post-title" itemprop="name headline">
-              <a target="_blank" href="http://ozdic.com/collocation-dictionary/{{page.title | downcase}}">See "{{page.title | downcase}}" in collocations</a>
-            </h5>
-            <h5 class="post-title" itemprop="name headline">
-              <a target="_blank" href="http://idioms.thefreedictionary.com/{{page.title | downcase}}">See "{{page.title | downcase}}" in idioms</a>
-            </h5>
+        <header class="post-header">
+          <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+          <div class="post-date float-end text-center border border-info rounded m-1">
+            <span class="d-block bg-info fw-bold fs-6">{{ page.date | date: "%b" }}</span>
+            <span class="d-block fs-3 fw-bold">{{ page.date | date: "%d" }}</span>
+            <span class="d-block fs-6 border-top px-4 folded-corner">{{ page.date | date: "%a" }}</span>
           </div>
+          <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%F" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+        </header>
 
-    </article>
+        <div class="post-content" itemprop="articleBody">
+          {{ content }}
+        </div>
+
+        {% if page.docurl %}
+          <p>
+            <a href="{{ page.docurl | prepend: site.baseurl }}" target="_blank" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">{{ page.title }}</a>
+          </p>
+        {% endif %}
+  </article>
 <!--
     <div class="row">
         {% if site.disqus-shortname %}
@@ -30,22 +33,20 @@ layout: default
     </div>
 -->
 
-    <div class="row">
-            <ul class="pager">
-             {% if page.next.url %}
-                    <li><a class="next" href="{{page.next.url | prepend: site.baseurl}}">&laquo; {{page.next.title}}</a></li>
-              {% endif %}
-              {% if page.previous.url %}
-                <li><a class="previous" href="{{page.previous.url | prepend: site.baseurl}}">{{page.previous.title}} &raquo;</a></li>
-              {% endif %}
-            </ul>
-    </div>
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      {% if page.next.url %}
+        <li class="page-item"><a class="page-link" href="{{page.next.url | prepend: site.baseurl}}">&laquo; {{page.next.title}}</a></li>
+      {% endif %}
+      <li class="page-item"><a class="page-link" href="{{site.baseurl}}/">Home</a></li>
+      {% if page.previous.url %}
+        <li class="page-item"><a class="page-link" href="{{page.previous.url | prepend: site.baseurl}}">{{page.previous.title}} &raquo;</a></li>
+      {% endif %}
+    </ul>
+  </nav>
 </div>
 
-
-{% include sidebar.html %}
-
+<div class="col-md-3 mt20">
+  {% include sidebar.html %}
 </div>
-
-
-{% include fb-script.html %}
+</div>

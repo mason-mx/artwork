@@ -4,7 +4,7 @@ function emptyResultsContainer () {
 
 function JekyllSearch(){
     var items = [];
-    $.getJSON( "/wordcards/search.json", function( data ) {
+    $.getJSON( "/loft/search.json", function( data ) {
         $.each( data, function( key, val ) {
             items.push( "<li><a href='" + val.url + "'>" +val.title + "</a></li>" );
         });

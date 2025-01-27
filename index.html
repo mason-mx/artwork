@@ -3,43 +3,14 @@ layout: index
 ---
 
 <div class="home">
-  {% assign total = 0 %}
-  {% assign easy = 0 %}
-  {% assign good = 0 %}
-  {% assign fail = 0 %}
-  {% for post in site.posts %}
-    {% assign total=total | plus:1 %}
-    {% if post.tags contains "easy" %}
-      {% assign easy=easy | plus:1 %}
-    {% elsif post.tags contains "good" %}
-      {% assign good=good | plus:1 %}
-    {% else %}
-      {% assign fail=fail | plus:1 %}
-    {% endif %}
-  {% endfor %}
   <div class="row">
-    <div class="d-flex justify-content-end w-100 px-5">
-      <div>
-        <a href="{{ site.baseurl }}/tagged">Check out all tags...</a>
+    {% for post in site.posts limit:6 %}
+      <div class="col-12 article-abstract">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="text-decoration-none"><h2>{{ post.title }}</h2></a>
+        <p class="blogdate">{{ post.date | date: "%d %B %Y" }}</p>
+        <div>{{ post.content | split:'<!--break-->' | first }}</div>
       </div>
-    </div>
-  </div>
-  <div id="tags_pie_chart" data-easy="{{ easy }}" data-good="{{ good }}" data-fail="{{ fail }}" style="height: 360px; width: 100%;" class="plotly-graph-div">
-  </div>
-
-  <div id="categories" class="row">
-    {% for category in site.categories %}
-      {% capture category_name %}{{ category | first }}{% endcapture %}
-      <div class="col-md-4 card">
-        <a href="{{ site.baseurl }}/category#{{ category_name | slugify }}" class="index-anchor">
-          <div class="panel panel-default">
-            <img height="200px" src="{{site.baseurl}}/images/{{category_name}}.png" alt="{{category_name}}">
-            <div class="panel-body">
-              <h2 class="panel-title pull-left">{{ category_name | truncate: 25 }}</h2>
-            </div>
-          </div>
-        </a>
-      </div>
+      <hr>
     {% endfor %}
   </div>
 </div>
