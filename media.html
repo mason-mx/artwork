@@ -46,7 +46,7 @@ permalink: /media
         {% endif %}
         {% assign d_counter_2=d_counter_2 | plus:1 %}
     {% endfor %}
-{% assign d_counter=d_counter | plus:1 %}
+    {% assign d_counter=d_counter | plus:1 %}
 {% endfor %}
 {% assign files="assets/images" | list_files: "*.*" %}
 {% assign len = files | size %}

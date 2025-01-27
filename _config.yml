@@ -6,14 +6,15 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Loft
+title: Mason's Artwork
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  Badboy
+  Artwork | Sketch | Acrylic
 
 
-baseurl: "/loft" # the subpath of your site, e.g. /blog
+baseurl: "/artwork" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
+imgurl: "/artwork/assets/images" # the subpath of your site, e.g. /blog
 
 #post
 baseimg: base.jpg
