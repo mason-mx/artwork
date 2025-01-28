@@ -10,7 +10,7 @@ permalink: /media
     {% for folder in folders %}
         {% assign files=folder | list_files: "*.*" %}
         {% assign len = files | size %}
-        {% if len > 0 %}
+        {% if len > 1 %}
             <div class="row mb-3 border border-info">
                 <div class="row m-0 h5 bg-info">{{folder}}</div>
                 {% assign counter=0 %}
@@ -43,6 +43,13 @@ permalink: /media
                     </button>
                 </div>
             </div>
+        {% else %}
+            <div class="row mb-3 border border-info">
+                <div class="row m-0 h5 bg-info">{{folder}}</div>
+                <div class="row m-0">
+                    <img height="auto" width="100%" src="{{site.baseurl}}/{{files[0]}}" alt="...">
+                </div>
+            </div>
         {% endif %}
         {% assign d_counter_2=d_counter_2 | plus:1 %}
     {% endfor %}
@@ -50,7 +57,7 @@ permalink: /media
 {% endfor %}
 {% assign files="assets/images" | list_files: "*.*" %}
 {% assign len = files | size %}
-{% if len > 0 %}
+{% if len > 1 %}
     {% assign counter=0 %}
     <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-inner">
@@ -79,5 +86,12 @@ permalink: /media
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
+    </div>
+{% else %}
+    <div class="row mb-3 border border-info">
+        <div class="row m-0 h5 bg-info">{{folder}}</div>
+        <div class="row m-0">
+            <img height="auto" width="100%" src="{{site.baseurl}}/{{files[0]}}" alt="...">
+        </div>
     </div>
 {% endif %}
