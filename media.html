@@ -3,18 +3,12 @@ layout: default
 permalink: /media/
 ---
 {% assign folders="assets/images" | list_folders %}
-{% assign ff="assets/images" | echo_folder %}
-<div class="row m-0 h5 bg-info">{{ff}}</div>
 {% assign d_counter=0 %}
 {% for folder in folders %}
     {% assign folders=folder | list_folders %}
-    {% assign fff=folder | echo_folder %}
-    <div class="row m-0 h5 bg-info">{{fff}}</div>
     {% assign d_counter_2=0 %}
     {% for folder in folders %}
         {% assign files=folder | list_files: "*.*" %}
-        {% assign ffff=folder | echo_folder %}
-        <div class="row m-0 h5 bg-info">{{ffff}}</div>
         {% assign len = files | size %}
         {% if len > 1 %}
             <div class="row mb-3 border border-info">
