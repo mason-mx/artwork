@@ -44,9 +44,9 @@ permalink: /media/
                 </div>
             </div>
         {% else %}
-            <div class="row mb-3 border border-info">
-                <div class="row m-0 h5 bg-info">{{folder}}</div>
-                <div class="row m-0">
+            <div class="row mb-3">
+                <div class="row m-0 h5 bg-info border border-info">{{folder}}</div>
+                <div class="row m-0 frame">
                     <img height="auto" width="100%" src="{{site.baseurl}}/{{files[0]}}" alt="...">
                 </div>
             </div>
@@ -88,9 +88,9 @@ permalink: /media/
         </button>
     </div>
 {% else %}
-    <div class="row mb-3 border border-info">
+    <div class="row mb-3">
         <div class="row m-0 h5 bg-info">{{folder}}</div>
-        <div class="row m-0">
+        <div class="row m-0 frame">
             <img height="auto" width="100%" src="{{site.baseurl}}/{{files[0]}}" alt="...">
         </div>
     </div>
