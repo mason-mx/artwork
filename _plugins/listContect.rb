@@ -20,6 +20,10 @@ module Jekyll
         #   .select { |e| File.directory? e }
         #   .join("<br>")
       end
+
+      def get_dirname(folder)
+        File.basename(File.dirname(folder)) + "-" + File.basename(folder)
+      end
     end
   end
   
