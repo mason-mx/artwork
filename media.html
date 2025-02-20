@@ -2,14 +2,14 @@
 layout: default
 permalink: /media/
 ---
-<div class="row">
+<div class="row grid" data-masonry='{"percentPosition": true }'>
     {% assign folders="assets/images" | list_folders %}
     {% assign d_counter=0 %}
     {% for folder in folders %}
         {% assign folders=folder | list_folders %}
         {% assign d_counter_2=0 %}
         {% for folder in folders %}
-            <div class="col-6 col-md-4">
+            <div class="col-sm-6 col-lg-4 mb-4">
                 <div class="card">
                 {% assign files=folder | list_files: "*.*" %}
                     {% assign len = files | size %}
