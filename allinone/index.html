@@ -1,10 +1,10 @@
 ---
 layout: default
 ---
-  <div class="row">
+  <div class="row gx-3 gy-2">
     {% for post in paginator.posts %}
-      <div class="col-md-6 p-2 card border border-info mb-2">
-        <div class="row">
+      <div class="col-md-6">
+        <div class="row p-2 card h-100">
           {% if post.img %}
             <div class="col-3">
               {% if post.img contains 'http://' or post.img contains 'https://' %}
@@ -28,9 +28,9 @@ layout: default
       {% endfor %}
   </div>
 
-  <nav aria-label="Page navigation example">
+  <nav aria-label="Page navigation">
     {% if paginator.total_pages > 1 %}
-      <ul class="pagination justify-content-center">
+      <ul class="pagination justify-content-center mt-3">
         {% if paginator.previous_page %}
           <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
         {% else %}
