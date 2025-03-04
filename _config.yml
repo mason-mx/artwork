@@ -17,6 +17,7 @@ url: "" # the base hostname & protocol for your site
 imgurl: "/artwork/assets/images" # the subpath of your site, e.g. /blog
 
 #post
+excerpt_separator: <!--more-->
 baseimg: base.jpg
 
 built-by: Mr.Wang
