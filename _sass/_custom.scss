@@ -7,6 +7,10 @@
     padding-top: 70px !important;
 }
 
+.p-bottom-41 {
+    padding-bottom: 41px !important;
+}
+
 .navbar>.container-fluid {
     justify-content: center;
 }
@@ -154,4 +158,19 @@
         border-right-color:#eed;
         border-top-color:#ccb;
     }
+}
+
+.m-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+    background: var(--bs-body-bg);
+    height: 41px;
+}
+
+.m-dropdown {
+    z-index: 1000;
 }
