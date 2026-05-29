@@ -4,9 +4,11 @@
     <a class="navbar-brand" href="{{site.baseurl}}/">
       {{site.title}}
     </a>
-
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <form class="navbar-form me-auto">
         <div class="input-group">
           <input type="text" id="search-input" class="form-control" placeholder="Search">
@@ -16,9 +18,9 @@
       </form>
       <form class="d-flex">
         <ul class="nav navbar-nav">
-          <li><a class="btn btn-primary me-2" href="{{site.baseurl}}/allinone/">All Stories</a></li>
-          <li><a class="btn btn-primary me-2" href="{{site.baseurl}}/media/">Media</a></li>
-          <li><a class="btn btn-primary" href="{{site.baseurl}}/appreciation/">Appreciation</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{site.baseurl}}/allinone/">All Stories</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{site.baseurl}}/media/">Media</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{site.baseurl}}/appreciation/">Appreciation</a></li>
         </ul>
       </form>
     </div><!-- /.navbar-collapse -->
