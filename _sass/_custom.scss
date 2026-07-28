@@ -174,3 +174,32 @@
 .m-dropdown {
     z-index: 1000;
 }
+
+.wall {
+  background-color: #f0f2f5; /* Light wall color */
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.picture-row {
+  display: flex;
+  gap: 30px; /* Space between frames */
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px;
+  .sketch-l img {
+    display: block;
+    width: 600px; /* Adjust picture width */
+    height: auto; /* Adjust picture height */
+    object-fit: cover;
+ }
+ .sketch-p img {
+    display: block;
+    width: auto; /* Adjust picture width */
+    height: 600px; /* Adjust picture height */
+    object-fit: cover;
+ }
+}
