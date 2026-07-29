@@ -176,7 +176,7 @@
 }
 
 .wall {
-  background-color: #f0f2f5; /* Light wall color */
+  //background-color: #f0f2f5; /* Light wall color */
   height: 80vh;
   display: flex;
   align-items: center;
@@ -201,5 +201,17 @@
     width: auto; /* Adjust picture width */
     height: 580px; /* Adjust picture height */
     object-fit: cover;
+ }
+ .carousel-indicators [data-bs-target] {
+    background-color: var(--bs-body-color) !important;
+ }
+ [data-bs-theme=dark] .carousel .carousel-indicators [data-bs-target] {
+    background-color: var(--bs-body-color) !important;
+ }
+ .carousel-caption {
+    color: var(--bs-body-color) !important;
+ }
+ [data-bs-theme=dark] .carousel .carousel-caption {
+    color: var(--bs-body-color) !important;
  }
 }
