@@ -202,6 +202,8 @@
     height: 580px; /* Adjust picture height */
     object-fit: cover;
  }
+}
+
  .carousel-indicators [data-bs-target] {
     background-color: var(--bs-body-color) !important;
  }
@@ -214,4 +216,3 @@
  [data-bs-theme=dark] .carousel .carousel-caption {
     color: var(--bs-body-color) !important;
  }
-}
