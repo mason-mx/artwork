@@ -216,3 +216,9 @@
  [data-bs-theme=dark] .carousel .carousel-caption {
     color: var(--bs-body-color) !important;
  }
+
+ blockquote {
+    background: var(--bs-secondary-bg);
+    border-left: solid var(--bs-primary-text-emphasis);
+    padding: 5px 10px;
+}

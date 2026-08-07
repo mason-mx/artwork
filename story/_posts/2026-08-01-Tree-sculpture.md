@@ -11,7 +11,8 @@ img:
 
 借着画，引用最近很有共鸣的一段话。
 
-> 重点不在于画出眼中的那棵树，而是画出那棵树如何触动我的心灵……唯有当我在树中看见自己时，才能真正画出它
+> 重点不在于画出眼中的那棵树，而是画出那棵树如何触动我的心灵……唯有当我在树中看见自己时，才能真正画出它。
+>
 > -- 马蒂斯
 
 It's been many years since I last visited this park. Back then, the children played here for half a day, counting how many sculpted objects there were.
@@ -19,5 +20,5 @@ It's been many years since I last visited this park. Back then, the children pla
 Through this pen/paper artwork, I'd like to quote a passage that recently resonated with me:
 
 > The point isn't to paint the tree I see, but to paint how that tree touches my heart… Only when I see myself in the tree can I truly paint it.
-
+>
 > -- Matisse
