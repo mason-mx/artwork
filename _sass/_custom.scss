@@ -222,3 +222,11 @@
     border-left: solid var(--bs-primary-text-emphasis);
     padding: 5px 10px;
 }
+
+.navbar-floating-vertical {
+    position: fixed;
+    left: 0px;
+    width: auto; /* Adjust width to fit your icons/labels */
+    z-index: 1029;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
