@@ -44,14 +44,14 @@ permalink: /media/
                             </button>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title" id="#{{folder | get_dirname}}">{{folder | get_dirname}}</h5>
+                            <h5 class="card-title" id="{{folder | get_dirname}}">{{folder | get_dirname}}</h5>
                         </div>
                     {% elsif len == 1 %}
                         <a target="_blank" href="{{site.baseurl}}/{{files[0]}}">
                             <img src="{{site.baseurl}}/{{files[0]}}" alt="...">
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title" id="#{{folder | get_dirname}}">{{folder | get_dirname}}</h5>
+                            <h5 class="card-title" id="{{folder | get_dirname}}">{{folder | get_dirname}}</h5>
                         </div>
                     {% endif %}
                 {% assign d_counter_2=d_counter_2 | plus:1 %}
